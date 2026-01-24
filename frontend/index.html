@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CU Yards Estimator</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Junk Volume Estimator</h1>
+      <p>Upload 1–12 photos to estimate volume in cubic yards (no pricing, volume only).</p>
+    </header>
+
+    <section class="card">
+      <h2>1. Upload photos</h2>
+      <input id="photoInput" type="file" accept="image/*" multiple />
+      <button id="uploadBtn">Create Job</button>
+      <p id="jobStatus"></p>
+    </section>
+
+    <section class="card" id="maskSection" hidden>
+      <h2>2. Optional scribble masks</h2>
+      <div id="maskList"></div>
+    </section>
+
+    <section class="card" id="estimateSection" hidden>
+      <h2>3. Estimate</h2>
+      <label>
+        <input type="checkbox" id="debugToggle" />
+        Include debug visuals
+      </label>
+      <button id="estimateBtn">Run Estimate</button>
+      <pre id="estimateOutput"></pre>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
