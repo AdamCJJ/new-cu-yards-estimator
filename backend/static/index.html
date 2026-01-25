@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yard Volume Estimator</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Junk Volume Estimator</h1>
+      <p>Upload photos to estimate junk volume in cubic yards. This tool reports volume only.</p>
+    </header>
+
+    <section class="upload-card">
+      <label class="file-label" for="photo-input">Select 1–12 photos</label>
+      <input id="photo-input" type="file" accept="image/*" multiple />
+
+      <div class="actions">
+        <button id="start-job" type="button">Create Job</button>
+        <button id="run-estimate" type="button" disabled>Estimate Volume</button>
+      </div>
+    </section>
+
+    <section class="mask-section">
+      <h2>Optional remove mask</h2>
+      <p>Draw in red to mark items to remove. Masks are stored per photo.</p>
+      <div class="mask-controls">
+        <select id="photo-select"></select>
+        <button id="clear-mask" type="button">Clear mask</button>
+        <button id="save-mask" type="button">Save mask</button>
+      </div>
+      <canvas id="mask-canvas" width="640" height="480"></canvas>
+    </section>
+
+    <section class="results">
+      <h2>Estimate output</h2>
+      <pre id="result-output">Upload photos to start.</pre>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
