@@ -10,4 +10,4 @@ COPY frontend /app/frontend
 
 ENV PORT=10000
 
-CMD ["python", "/app/backend/main.py"]
+CMD ["sh", "-c", "uvicorn backend.main:app --host 0.0.0.0 --port ${PORT:-10000}"]

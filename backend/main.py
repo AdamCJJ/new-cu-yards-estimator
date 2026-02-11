@@ -1,4 +1,3 @@
-import io
 import json
 import os
 import uuid
@@ -10,12 +9,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
-from modules.scene_grouping import group_scenes
-from modules.scale_detection import detect_scale_reference
-from modules.depth_estimation import estimate_depth_map
-from modules.segmentation import generate_debris_mask
-from modules.volume_estimation import estimate_volume_from_masks
-from modules.dedupe import fuse_job_estimates, fuse_scene_estimates
+from backend.modules.scene_grouping import group_scenes
+from backend.modules.scale_detection import detect_scale_reference
+from backend.modules.depth_estimation import estimate_depth_map
+from backend.modules.segmentation import generate_debris_mask
+from backend.modules.volume_estimation import estimate_volume_from_masks
+from backend.modules.dedupe import fuse_job_estimates, fuse_scene_estimates
 
 OUTPUT_DIR = Path("/tmp/outputs")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

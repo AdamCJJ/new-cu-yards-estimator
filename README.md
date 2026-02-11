@@ -41,9 +41,8 @@ This MVP estimates junk removal volume in **cubic yards only**. It does **not** 
 
 ## Local Run
 ```
-cd backend
-pip install -r requirements.txt
-python main.py
+pip install -r backend/requirements.txt
+uvicorn backend.main:app --host 0.0.0.0 --port ${PORT:-10000}
 ```
 
 ## Deployment
@@ -53,3 +52,7 @@ python main.py
 
 ## Render
 The `render.yaml` file defines a single Docker Web Service.
+
+
+## Render startup note
+Use the repository Dockerfile start command (do not override with a custom start command in Render).
